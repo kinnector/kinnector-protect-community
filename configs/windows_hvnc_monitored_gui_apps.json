@@ -1,0 +1,6 @@
+{
+  "description": "GUI application process names monitored for display environment mismatches on Windows.",
+  "apps": [
+    "chrome.exe", "firefox.exe", "msedge.exe", "exodus.exe"
+  ]
+}

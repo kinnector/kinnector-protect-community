@@ -1,0 +1,9 @@
+[policy]
+name = "block-unauthorized-dns"
+action = "Block"
+severity = "High"
+
+[[rules]]
+type = "network"
+port = 53
+allow_list = ["1.1.1.1", "8.8.8.8"]

@@ -1,0 +1,6 @@
+{
+  "description": "Browser binaries monitored on Windows.",
+  "browsers": [
+    "chrome.exe", "msedge.exe", "brave.exe", "firefox.exe"
+  ]
+}

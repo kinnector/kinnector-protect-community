@@ -1,0 +1,10 @@
+{
+  "description": "Package installer binaries and keywords monitored on Windows systems.",
+  "binaries": [
+    "npm", "yarn", "pnpm", "bun", "pip", "poetry", "pipenv", "composer", 
+    "cargo", "gem", "bundle", "nuget", "dotnet", "go", 
+    "gradle", "gradlew", "mvn", "sbt", "conan", "vcpkg", 
+    "cpan", "cpanm", "luarocks", "julia", "cabal", "stack",
+    "winget", "choco", "scoop"
+  ]
+}

@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 d3d13e454e3089e6e90c323a4d30feac988a785f Gogs <gogs@fake.local> 1783101006 +0500	commit (initial): Initial commit of merged protect-community config repo
+d3d13e454e3089e6e90c323a4d30feac988a785f d3d13e454e3089e6e90c323a4d30feac988a785f Gogs <gogs@fake.local> 1783101009 +0500	Branch: renamed refs/heads/master to refs/heads/main
+d3d13e454e3089e6e90c323a4d30feac988a785f 901a5538b44b48b8ac91da6363334ae5f45858eb Gogs <gogs@fake.local> 1783126873 +0500	commit: Commit changes for modular EDR hardening and threat analysis updates
+901a5538b44b48b8ac91da6363334ae5f45858eb 45ebeb57a1813519c78eeff5c6d6761914bb37e8 goriyasno <kinnector@gmail.com> 1783126873 +0500	filter-branch: rewrite
+45ebeb57a1813519c78eeff5c6d6761914bb37e8 0a79a0f77ddfd73ca0624e1017b59fc0b4b5e3e5 goriyasno <kinnector@gmail.com> 1783352414 +0500	commit: feat(wordpress): add vulnerable plugins database list
+0a79a0f77ddfd73ca0624e1017b59fc0b4b5e3e5 9f7c88ebf621b6d1c7eda5f61405c9cda4eb29a5 goriyasno <kinnector@gmail.com> 1783364481 +0500	commit: Add common Linux LOLBins to policies as protected binaries
+9f7c88ebf621b6d1c7eda5f61405c9cda4eb29a5 acebdaec0f96a1a1c5f8801a57f6316b0d0c61c8 goriyasno <kinnector@gmail.com> 1783378528 +0500	commit: Normalize kinnector brand name spelling and bolding in README
+acebdaec0f96a1a1c5f8801a57f6316b0d0c61c8 46dca0b4d76d8ac31bffe7b3d55950fa4022959e goriyasno <kinnector@gmail.com> 1783528844 +0500	commit: Update README.md to align with the documentation constitution
+46dca0b4d76d8ac31bffe7b3d55950fa4022959e c96b985ca25f63925bb80b4f3893182ed2f21299 goriyasno <kinnector@gmail.com> 1783567967 +0500	pull: Fast-forward

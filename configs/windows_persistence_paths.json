@@ -1,0 +1,6 @@
+{
+  "description": "Standard persistence locations monitored on Windows.",
+  "paths": [
+    "\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp"
+  ]
+}

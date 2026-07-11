@@ -1,0 +1,6 @@
+{
+  "description": "Scripting languages and execution engines monitored on Windows.",
+  "interpreters": [
+    "powershell", "pwsh", "cmd", "python", "node", "perl", "ruby"
+  ]
+}

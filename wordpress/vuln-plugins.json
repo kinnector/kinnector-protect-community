@@ -1,0 +1,116 @@
+{
+  "$schema": "https://raw.githubusercontent.com/kinnector/kinnector-protect-community/main/wordpress/vuln-plugins.schema.json",
+  "comment": "Kinnector EDR Community WordPress Plugin Vulnerability Database",
+  "last_updated": "2026-07-05T00:00:00Z",
+  "vulnerabilities": [
+    {
+      "slug": "wp-database-backup",
+      "vuln_start": "0.1.0",
+      "vuln_end": "5.2.3",
+      "patched_version": "5.2.4",
+      "severity": "critical",
+      "cve": "CVE-2026-21801",
+      "actively_exploited": true,
+      "exploit_added": "2026-07-05T00:00:00Z",
+      "description": "Remote Code Execution (RCE) via unauthenticated database backup download and execution parameter injection.",
+      "exploit_signatures": [
+        {
+          "type": "request_path",
+          "match": "wp-content/plugins/wp-database-backup/",
+          "method": "GET",
+          "context": "unauthenticated_only",
+          "score": 80,
+          "action": "block"
+        },
+        {
+          "type": "request_param",
+          "key": "download",
+          "match": "backup",
+          "method": "GET",
+          "context": "unauthenticated_only",
+          "score": 70,
+          "action": "block"
+        }
+      ]
+    },
+    {
+      "slug": "advanced-custom-fields",
+      "vuln_start": "6.0.0",
+      "vuln_end": "6.2.4",
+      "patched_version": "6.2.5",
+      "severity": "high",
+      "cve": "CVE-2026-22991",
+      "actively_exploited": false,
+      "exploit_added": "2026-07-05T00:00:00Z",
+      "description": "SQL Injection vulnerability in Advanced Custom Fields allowing authenticated users with contributor privileges or higher to execute arbitrary SQL queries.",
+      "exploit_signatures": []
+    },
+    {
+      "slug": "contact-form-7",
+      "vuln_start": "5.0.0",
+      "vuln_end": "5.9.1",
+      "patched_version": "5.9.2",
+      "severity": "high",
+      "cve": "CVE-2026-30291",
+      "actively_exploited": true,
+      "exploit_added": "2026-07-05T00:00:00Z",
+      "description": "Unauthenticated Arbitrary File Upload in Contact Form 7 leading to potential remote code execution via uploads directory.",
+      "exploit_signatures": [
+        {
+          "type": "file_extension",
+          "match": "php",
+          "method": "POST",
+          "context": "unauthenticated_only",
+          "score": 90,
+          "action": "block"
+        },
+        {
+          "type": "file_extension",
+          "match": "phtml",
+          "method": "POST",
+          "context": "unauthenticated_only",
+          "score": 90,
+          "action": "block"
+        },
+        {
+          "type": "file_extension",
+          "match": "phar",
+          "method": "POST",
+          "context": "unauthenticated_only",
+          "score": 90,
+          "action": "block"
+        }
+      ]
+    },
+    {
+      "slug": "wp-file-manager",
+      "vuln_start": "6.0.0",
+      "vuln_end": "7.2.1",
+      "patched_version": "7.2.2",
+      "severity": "critical",
+      "cve": "CVE-2026-44102",
+      "actively_exploited": true,
+      "exploit_added": "2026-07-05T00:00:00Z",
+      "description": "Unauthenticated Arbitrary File Upload leading to RCE in elFinder component of WP File Manager.",
+      "exploit_signatures": [
+        {
+          "type": "request_path",
+          "match": "wp-content/plugins/wp-file-manager/lib/php/connector.minimal.php",
+          "method": "*",
+          "context": "unauthenticated_only",
+          "score": 100,
+          "action": "block"
+        },
+        {
+          "type": "request_param",
+          "key": "cmd",
+          "match_any": ["upload", "mkdir", "rm", "rename", "file"],
+          "method": "POST",
+          "context": "unauthenticated_only",
+          "score": 80,
+          "action": "block"
+        }
+      ]
+    }
+  ]
+}

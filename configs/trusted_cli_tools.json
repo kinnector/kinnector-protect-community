@@ -1,0 +1,19 @@
+{
+  "cli_tools": [
+    {
+      "name": "ssh",
+      "path": "/usr/bin/ssh",
+      "allowed_categories": ["CAT_SSH_KEYS"]
+    },
+    {
+      "name": "git",
+      "path": "/usr/bin/git",
+      "allowed_categories": ["CAT_SSH_KEYS", "CAT_CLOUD_CREDS"]
+    },
+    {
+      "name": "rsync",
+      "path": "/usr/bin/rsync",
+      "allowed_categories": ["CAT_SSH_KEYS"]
+    }
+  ]
+}

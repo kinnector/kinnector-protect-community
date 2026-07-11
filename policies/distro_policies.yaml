@@ -1,0 +1,195 @@
+# Kinnector Distro-Specific Security Policies
+# Contains standard baselines for Ubuntu/Debian, CentOS/Rocky, Arch, and Fedora
+
+defaults:
+  # Exclusions common across all Linux environments to minimize I/O noise
+  global_exclusions:
+    - /var/log/
+    - /var/lib/mysql/
+    - /var/lib/postgresql/
+    - /sys/
+    - /proc/
+    - /dev/
+
+# Common user-space security categories across all distributions
+common_categories:
+  user_keystores:
+    description: "User cryptographic keys, cloud configurations, package registries, and developer tool credentials."
+    sensitive_files:
+      - ~/.ssh/
+      - ~/.gnupg/
+      - ~/.aws/credentials
+      - ~/.kube/
+      - ~/.config/gcloud/
+      - ~/.npmrc
+      - ~/.pypirc
+      - ~/.docker/config.json
+      - ~/.cargo/credentials
+      - ~/.cargo/credentials.toml
+      - ~/.config/gh/
+      - ~/.m2/settings.xml
+      - ~/.gradle/gradle.properties
+      - ~/.android/
+      - ~/.flutter/
+      - ~/.dart/
+      - ~/.composer/
+      - ~/.config/composer/
+      - ~/.config/Code/
+      - ~/.config/JetBrains/
+      - ~/.config/op/
+      - ~/.vault-token
+      - ~/.gitconfig
+      - /proc/*/environ
+      - ~/.gem/credentials
+      - Gemfile
+      - *.gemspec
+      - Rakefile
+      - ~/.config/NuGet/NuGet.Config
+      - ~/.nuget/
+      - mix.exs
+      - ~/.hex/hex.config
+      - ~/.config/dart/pub-credentials.json
+      - ~/.pub-cache/
+      - pubspec.yaml
+      - /var/run/docker.sock
+      - /run/containerd/containerd.sock
+      - /var/run/secrets/kubernetes.io/
+      - /etc/kubernetes/
+      - ~/.config/alpaca/
+      - ~/.binance/
+      - ~/.wine/
+
+  ai_developer_agents:
+    description: "Configuration, secrets, state directories, and access caches of AI coding assistants."
+    sensitive_files:
+      - ~/.config/claude/
+      - ~/.config/agy/
+      - ~/.gemini/antigravity-cli/
+      - ~/.config/gemini/
+      - ~/.config/opencode/
+      - ~/.config/codex/
+      - ~/.config/hermes/
+      - ~/.config/claude-code/
+      - ~/.claude/
+
+  common_browsers:
+    description: "Web browser profile directories containing session tokens, databases, and login keychains."
+    sensitive_files:
+      # Native Packages
+      - ~/.config/google-chrome/
+      - ~/.config/google-chrome-beta/
+      - ~/.config/google-chrome-unstable/
+      - ~/.config/BraveSoftware/Brave-Browser/
+      - ~/.config/chromium/
+      - ~/.mozilla/firefox/
+      - ~/.waterfox/
+      - ~/.librewolf/
+      - ~/.config/librewolf/
+      - ~/.config/microsoft-edge/
+      # Snap Packages (Canonical Sandbox - exact profiles)
+      - ~/snap/chromium/common/.config/chromium/
+      - ~/snap/brave/common/.config/BraveSoftware/Brave-Browser/
+      - ~/snap/firefox/common/.mozilla/firefox/
+      - ~/snap/waterfox/common/.waterfox/
+      - ~/snap/librewolf/common/.librewolf/
+      - ~/snap/google-chrome/common/.config/google-chrome/
+      - ~/snap/google-chrome-beta/common/.config/google-chrome-beta/
+      - ~/snap/google-chrome-unstable/common/.config/google-chrome-unstable/
+
+      # Flatpak Packages (Sandboxed Apps - exact profiles)
+      - ~/.var/app/com.google.Chrome/config/google-chrome/
+      - ~/.var/app/com.google.ChromeBeta/
+      - ~/.var/app/com.google.ChromeDev/
+      - ~/.var/app/org.chromium.Chromium/config/chromium/
+      - ~/.var/app/com.brave.Browser/config/BraveSoftware/Brave-Browser/
+      - ~/.var/app/org.mozilla.firefox/.mozilla/firefox/
+      - ~/.var/app/net.waterfox.waterfox/.waterfox/
+      - ~/.var/app/io.gitlab.librewolf-community/.librewolf/
+
+  cryptocurrency_wallets:
+    description: "Web3 wallets, smart contract development keys (Truffle, Foundry, Hardhat, Solana, Sui), and databases."
+    sensitive_files:
+      - ~/.ethereum/
+      - ~/.exodus/
+      - wallet.dat
+      - ~/.foundry/
+      - ~/.truffle/
+      - ~/.config/truffle/
+      - ~/hardhat-tutorial/
+      - ~/.config/solana/
+      - ~/.sui/
+
+distributions:
+  debian_ubuntu:
+    sensitive_files:
+      # Credentials & Auth
+      - /etc/shadow
+      - /etc/passwd
+      - /etc/gshadow
+      - /etc/group
+      - /etc/sudoers
+      - /etc/sudoers.d/
+      - /etc/pam.d/
+      # Package Managers & GPG Keys
+      - /etc/apt/trusted.gpg.d/
+      - /etc/apt/sources.list
+      - /etc/apt/sources.list.d/
+      # SSH configurations
+      - /etc/ssh/sshd_config
+      - /etc/ssh/ssh_host_*
+      # Core Network
+      - /etc/hosts
+      - /etc/resolv.conf
+
+  rhel_centos_rocky:
+    sensitive_files:
+      # Credentials & Auth
+      - /etc/shadow
+      - /etc/passwd
+      - /etc/gshadow
+      - /etc/group
+      - /etc/sudoers
+      - /etc/sudoers.d/
+      - /etc/pam.d/
+      # Certs & PKI (CentOS/RHEL specific locations)
+      - /etc/pki/tls/certs/
+      - /etc/pki/tls/private/
+      - /etc/pki/ca-trust/
+      # SELinux configuration
+      - /etc/selinux/config
+      # SSH configurations
+      - /etc/ssh/sshd_config
+      - /etc/ssh/ssh_host_*
+
+  arch_manjaro:
+    sensitive_files:
+      # Credentials & Auth
+      - /etc/shadow
+      - /etc/passwd
+      - /etc/gshadow
+      - /etc/group
+      - /etc/sudoers
+      - /etc/sudoers.d/
+      - /etc/pam.d/
+      # Pacman Keyrings & configurations
+      - /etc/pacman.d/gnupg/
+      - /etc/pacman.conf
+      # SSH configurations
+      - /etc/ssh/sshd_config
+      - /etc/ssh/ssh_host_*
+
+  fedora:
+    sensitive_files:
+      # Credentials & Auth
+      - /etc/shadow
+      - /etc/passwd
+      - /etc/gshadow
+      - /etc/group
+      - /etc/sudoers
+      - /etc/sudoers.d/
+      - /etc/pam.d/
+      # System Crypto Policies
+      - /etc/crypto-policies/
+      # SSH configurations
+      - /etc/ssh/sshd_config
+      - /etc/ssh/ssh_host_*

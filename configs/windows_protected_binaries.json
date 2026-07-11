@@ -1,0 +1,6 @@
+{
+  "description": "Protected critical binaries on Windows.",
+  "binaries": [
+    "nginx.exe", "httpd.exe", "sshd.exe", "lsass.exe", "explorer.exe"
+  ]
+}

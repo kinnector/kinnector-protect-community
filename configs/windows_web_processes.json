@@ -1,0 +1,6 @@
+{
+  "description": "Web server process names monitored for potential compromises on Windows.",
+  "processes": [
+    "nginx.exe", "httpd.exe", "caddy.exe", "node.exe"
+  ]
+}

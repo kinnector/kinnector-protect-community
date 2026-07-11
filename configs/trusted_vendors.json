@@ -1,0 +1,19 @@
+{
+  "vendors": [
+    {
+      "name": "Google LLC",
+      "team_id": "EQHXZ8M8AV",
+      "platforms": ["windows", "macos"]
+    },
+    {
+      "name": "Mozilla Corporation",
+      "team_id": "959G39P522",
+      "platforms": ["windows", "macos", "linux"]
+    },
+    {
+      "name": "Microsoft Corporation",
+      "team_id": "UBF8T346G9",
+      "platforms": ["windows", "macos"]
+    }
+  ]
+}

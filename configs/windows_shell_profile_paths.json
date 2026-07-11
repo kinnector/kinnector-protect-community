@@ -1,0 +1,7 @@
+{
+  "description": "Standard PowerShell profile paths monitored for persistence on Windows.",
+  "paths": [
+    "\\Microsoft.PowerShell_profile.ps1",
+    "\\profile.ps1"
+  ]
+}
